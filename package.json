@@ -1,0 +1,22 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/JaroslavRusanov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/JaroslavRusanov/frontend-project-44/actions)",
+  "main": "index.js",
+  "bin": {
+    "code": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaroslavRusanov/frontend-project-44.git"
+  },
+  "author": "sco.nuff@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaroslavRusanov/frontend-project-44/issues"
+  },
+  "homepage": "https://github.com/JaroslavRusanov/frontend-project-44#readme"
+}
