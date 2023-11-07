@@ -1,7 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const greetingWithName = (name) => {
+export const greetingWithName = () => {
   let userName = readlineSync.question('May I have your name? ');
+
+  if (userName.length === 0) {
+    return console.log(`Hello, Anonymous!`);
+  }
+
   userName = userName.trim();
 
   if (userName[0] !== userName[0].toUpperCase()) {
@@ -9,5 +14,3 @@ const greetingWithName = (name) => {
   }
   console.log(`Hello, ${userName}!`);
 };
-
-export { greetingWithName };
