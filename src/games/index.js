@@ -20,32 +20,12 @@ const greetingsWithName = () => {
 
 const countsRound = 3;
 
-const isEven = (number) => (number % 2 === 0);
-
-const getRandomNumber = () => (Math.round(Math.random() * 100));
-
-const playRound = () => {
-  const randomNumber = getRandomNumber();
-  const correctAnswer = (isEven(randomNumber)) ? 'yes' : 'no';
-
-  console.log(`Question: ${randomNumber}`);
-
-  const userAnswer = readlineSync.question('Your answer: ');
-
-  if (userAnswer && userAnswer.toLowerCase().trim() === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  return false;
-};
-
-const playGame = () => {
+const playGame = (round, condition) => {
   const userName = greetingsWithName();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(condition);
 
   for (let i = 0; i < countsRound; i += 1) {
-    const isCorrectRound = playRound();
+    const isCorrectRound = round();
     if (!isCorrectRound) {
       console.log(`Let's try again, ${userName}!`);
       return;
@@ -54,4 +34,8 @@ const playGame = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default playGame;
+const getRandomNumber = () => (Math.round(Math.random() * 10));
+
+const getUserAnswer = () => readlineSync.question('Your answer: ');
+
+export { getRandomNumber, getUserAnswer, playGame };
