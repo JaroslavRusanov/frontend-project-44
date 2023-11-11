@@ -9,3 +9,5 @@
 [link asciinema brain-calc](https://asciinema.org/a/rzlOC9tR6ktZCwMlWBSr578aA)
 
 [link asciinema brain-gcd](https://asciinema.org/a/620418)
+
+[link asciinema brain-progression](https://asciinema.org/a/620430)

@@ -4,9 +4,6 @@ import {
 
 const getBiggestDivider = (number1, number2) => {
   console.log(`Question: ${number1} ${number2}`);
-  if (number1 === number2) {
-    return number1;
-  }
 
   const smallerNumberOf = (number1 < number2) ? number1 : number2;
   for (let i = smallerNumberOf; i > 0; i -= 1) {
