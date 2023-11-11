@@ -1,8 +1,10 @@
-import { getRandomNumber, getUserAnswer, playGame } from './index.js';
+import {
+  getRandomNumber, getUserAnswer, playGame, playRound,
+} from './index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
-const playRound = () => {
+const playEvenRound = () => {
   const randomNumber = getRandomNumber();
   const correctAnswer = (isEven(randomNumber)) ? 'yes' : 'no';
 
@@ -10,17 +12,12 @@ const playRound = () => {
 
   const userAnswer = getUserAnswer();
 
-  if (userAnswer && userAnswer.toLowerCase().trim() === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  return false;
+  return playRound(correctAnswer, userAnswer);
 };
 
 const playEvenGame = () => {
   const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
-  playGame(playRound, condition);
+  playGame(playEvenRound, condition);
 };
 
 export default playEvenGame;
