@@ -1,11 +1,11 @@
 import {
-  getTwoRandomNumbers, getUserAnswer, playGame, playRound,
+  getRandomNumber, getUserAnswer, playGame, playRound,
 } from './index.js';
 
 const getBiggestDivider = (number1, number2) => {
   console.log(`Question: ${number1} ${number2}`);
 
-  const smallerNumberOf = (number1 < number2) ? number1 : number2;
+  const smallerNumberOf = Math.min(number1, number2);
   for (let i = smallerNumberOf; i > 0; i -= 1) {
     if (number1 % i === 0 && number2 % i === 0) {
       return i;
@@ -15,9 +15,10 @@ const getBiggestDivider = (number1, number2) => {
 };
 
 const playGcdRound = () => {
-  const numbers = getTwoRandomNumbers();
+  const numbers1 = (getRandomNumber() + 1);
+  const numbers2 = (getRandomNumber() + 1);
 
-  const correctAnswer = getBiggestDivider(numbers[0], numbers[1]);
+  const correctAnswer = getBiggestDivider(numbers1, numbers2);
   const userAnswer = Number(getUserAnswer());
 
   return playRound(correctAnswer, userAnswer);
