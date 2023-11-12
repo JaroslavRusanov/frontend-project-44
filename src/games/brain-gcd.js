@@ -15,10 +15,10 @@ const getBiggestDivider = (number1, number2) => {
 };
 
 const playGcdRound = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
+  const numb1 = getRandomNumber();
+  const numb2 = getRandomNumber();
 
-  const correctAnswer = getBiggestDivider(number1, number2);
+  const correctAnswer = getBiggestDivider(numb1, numb2);
   const userAnswer = Number(getUserAnswer());
 
   return playRound(correctAnswer, userAnswer);

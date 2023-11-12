@@ -2,8 +2,9 @@ import {
   getRandomNumber, getUserAnswer, playGame, playRound,
 } from './index.js';
 
+const countsOfNumber = 10;
+
 const getProgression = () => {
-  const countsOfNumber = 10;
   const progressions = [getRandomNumber()];
   const progressionStep = (getRandomNumber() + 1);
 
@@ -20,11 +21,11 @@ const getTaskAndSolution = () => {
   const correctAnswer = progressions[randomAsk - 1];
   const newProgressions = [];
 
-  for (const value of progressions) {
-    if (value === correctAnswer) {
+  for (let i = 0; i < countsOfNumber; i += 1) {
+    if (progressions[i] === correctAnswer) {
       newProgressions.push('..');
     } else {
-      newProgressions.push(value);
+      newProgressions.push(progressions[i]);
     }
   }
   console.log(`Question: ${newProgressions.join(' ')}`);
