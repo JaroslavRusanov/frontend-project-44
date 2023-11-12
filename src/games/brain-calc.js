@@ -10,10 +10,10 @@ const getRandomExpression = (num1, num2) => {
   if (randomOperator === 0) {
     console.log(`Question: ${num1} + ${num2}`);
     return num1 + num2;
-  } else if (randomOperator === 1) {
+  } if (randomOperator === 1) {
     console.log(`Question: ${num1} - ${num2}`);
     return num1 - num2;
-  } else if (randomOperator === 2) {
+  } if (randomOperator === 2) {
     console.log(`Question: ${num1} * ${num2}`);
     return num1 * num2;
   }
