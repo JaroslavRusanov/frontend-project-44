@@ -4,6 +4,16 @@ const countsRound = 3;
 
 const getRandomNumber = () => (Math.round(Math.random() * 10));
 
+const getTwoRandomNumbers = () => {
+  const twoNumbers = [];
+
+  while (twoNumbers.length < 3) {
+    twoNumbers.push(getRandomNumber());
+  }
+
+  return twoNumbers;
+};
+
 const getUserAnswer = () => readlineSync.question('Your answer: ');
 
 const greetingsWithName = () => {
@@ -48,5 +58,5 @@ const playGame = (round, condition) => {
 };
 
 export {
-  getRandomNumber, getUserAnswer, playGame, playRound,
+  getRandomNumber, getUserAnswer, playGame, playRound, greetingsWithName, getTwoRandomNumbers,
 };

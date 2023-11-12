@@ -1,5 +1,5 @@
 import {
-  getRandomNumber, getUserAnswer, playGame, playRound,
+  getUserAnswer, playGame, playRound, getTwoRandomNumbers,
 } from './index.js';
 
 const getRandomInt = (max) => Math.floor(Math.random() * max);
@@ -21,10 +21,9 @@ const getRandomExpression = (num1, num2) => {
 };
 
 const playCalcRound = () => {
-  const number1 = getRandomNumber();
-  const number2 = getRandomNumber();
+  const numbers = getTwoRandomNumbers();
 
-  const correctAnswer = getRandomExpression(number1, number2);
+  const correctAnswer = getRandomExpression(numbers[0], numbers[1]);
   const userAnswer = Number(getUserAnswer());
 
   return playRound(correctAnswer, userAnswer);

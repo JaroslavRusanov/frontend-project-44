@@ -1,5 +1,5 @@
 import {
-  getRandomNumber, getUserAnswer, playGame, playRound,
+  getTwoRandomNumbers, getUserAnswer, playGame, playRound,
 } from './index.js';
 
 const getBiggestDivider = (number1, number2) => {
@@ -15,10 +15,9 @@ const getBiggestDivider = (number1, number2) => {
 };
 
 const playGcdRound = () => {
-  const numb1 = getRandomNumber();
-  const numb2 = getRandomNumber();
+  const numbers = getTwoRandomNumbers();
 
-  const correctAnswer = getBiggestDivider(numb1, numb2);
+  const correctAnswer = getBiggestDivider(numbers[0], numbers[1]);
   const userAnswer = Number(getUserAnswer());
 
   return playRound(correctAnswer, userAnswer);

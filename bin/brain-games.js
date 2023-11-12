@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import greetingsWithName from '../src/cli.js';
+import { greetingsWithName } from '../src/games/index.js';
 
 greetingsWithName();
