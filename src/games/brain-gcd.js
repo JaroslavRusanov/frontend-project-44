@@ -1,11 +1,9 @@
-import {
-  getRandomNumber, getUserAnswer, playGame, playRound,
-} from './index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../random-number.js';
 
 const getBiggestDivider = (number1, number2) => {
-  console.log(`Question: ${number1} ${number2}`);
-
   const smallerNumberOf = Math.min(number1, number2);
+
   for (let i = smallerNumberOf; i > 0; i -= 1) {
     if (number1 % i === 0 && number2 % i === 0) {
       return i;
@@ -15,18 +13,18 @@ const getBiggestDivider = (number1, number2) => {
 };
 
 const playGcdRound = () => {
-  const numbers1 = (getRandomNumber() + 1);
-  const numbers2 = (getRandomNumber() + 1);
+  const number1 = (getRandomNumber(10) + 1);
+  const number2 = (getRandomNumber(10) + 1);
 
-  const correctAnswer = getBiggestDivider(numbers1, numbers2);
-  const userAnswer = Number(getUserAnswer());
+  const correctAnswer = getBiggestDivider(number1, number2);
+  const question = `Question: ${number1} ${number2}`;
 
-  return playRound(correctAnswer, userAnswer);
+  return [question, correctAnswer];
 };
 
 const playGcdGame = () => {
   const condition = 'Find the greatest common divisor of given numbers.';
-  playGame(playGcdRound, condition);
+  playGame(condition, playGcdRound);
 };
 
 export default playGcdGame;

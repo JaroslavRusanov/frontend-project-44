@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/JaroslavRusanov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/JaroslavRusanov/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "Training project on creation of console games",
+  "main": "brain-games.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",

@@ -1,37 +1,38 @@
-import {
-  getUserAnswer, playGame, playRound, getTwoRandomNumbers,
-} from './index.js';
-
-const getRandomInt = (max) => Math.floor(Math.random() * max);
-
-const getRandomExpression = (num1, num2) => {
-  const randomOperator = getRandomInt(3);
-
-  if (randomOperator === 0) {
-    console.log(`Question: ${num1} + ${num2}`);
-    return num1 + num2;
-  } if (randomOperator === 1) {
-    console.log(`Question: ${num1} - ${num2}`);
-    return num1 - num2;
-  } if (randomOperator === 2) {
-    console.log(`Question: ${num1} * ${num2}`);
-    return num1 * num2;
-  }
-  return null;
-};
+import playGame from '../index.js';
+import getRandomNumber from '../random-number.js';
 
 const playCalcRound = () => {
-  const numbers = getTwoRandomNumbers();
+  const num1 = getRandomNumber(10);
+  const num2 = getRandomNumber(10);
+  const randomIndex = getRandomNumber(3);
+  const operators = ['+', '-', '*'];
 
-  const correctAnswer = getRandomExpression(numbers[0], numbers[1]);
-  const userAnswer = Number(getUserAnswer());
+  let question = '';
+  let correctAnswer = 0;
 
-  return playRound(correctAnswer, userAnswer);
+  switch (operators[randomIndex]) {
+    case '+':
+      question = `Question: ${num1} + ${num2}`;
+      correctAnswer = num1 + num2;
+      break;
+    case '-':
+      question = `Question: ${num1} - ${num2}`;
+      correctAnswer = num1 - num2;
+      break;
+    case '*':
+      question = `Question: ${num1} * ${num2}`;
+      correctAnswer = num1 * num2;
+      break;
+    default:
+      return null;
+  }
+
+  return [question, correctAnswer];
 };
 
 const playCalcGame = () => {
   const condition = 'What is the result of the expression?';
-  playGame(playCalcRound, condition);
+  playGame(condition, playCalcRound);
 };
 
 export default playCalcGame;

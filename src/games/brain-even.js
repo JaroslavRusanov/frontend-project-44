@@ -1,23 +1,18 @@
-import {
-  getRandomNumber, getUserAnswer, playGame, playRound,
-} from './index.js';
-
-const isEven = (number) => (number % 2 === 0);
+import getRandomNumber from '../random-number.js';
+import playGame from '../index.js';
 
 const playEvenRound = () => {
-  const randomNumber = getRandomNumber();
-  const correctAnswer = (isEven(randomNumber)) ? 'yes' : 'no';
+  const number = getRandomNumber(10, 1);
+  const correctAnswer = (number % 2 === 0) ? 'yes' : 'no';
 
-  console.log(`Question: ${randomNumber}`);
+  const question = `Question: ${number}`;
 
-  const userAnswer = getUserAnswer();
-
-  return playRound(correctAnswer, userAnswer);
+  return [question, correctAnswer];
 };
 
 const playEvenGame = () => {
   const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
-  playGame(playEvenRound, condition);
+  playGame(condition, playEvenRound);
 };
 
 export default playEvenGame;

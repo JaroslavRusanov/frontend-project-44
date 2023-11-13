@@ -1,12 +1,11 @@
-import {
-  getRandomNumber, getUserAnswer, playGame, playRound,
-} from './index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../random-number.js';
 
 const countsOfNumber = 10;
 
 const getProgression = () => {
-  const progressions = [getRandomNumber()];
-  const progressionStep = (getRandomNumber() + 1);
+  const progressions = [getRandomNumber(10)];
+  const progressionStep = getRandomNumber(10, 1);
 
   for (let i = 0; i < countsOfNumber; i += 1) {
     const result = progressions[i];
@@ -15,9 +14,9 @@ const getProgression = () => {
   return progressions;
 };
 
-const getTaskAndSolution = () => {
+const playProgressionRound = () => {
   const progressions = getProgression();
-  const randomAsk = getRandomNumber();
+  const randomAsk = getRandomNumber(10);
   const correctAnswer = progressions[randomAsk - 1];
   const newProgressions = [];
 
@@ -28,21 +27,14 @@ const getTaskAndSolution = () => {
       newProgressions.push(progressions[i]);
     }
   }
-  console.log(`Question: ${newProgressions.join(' ')}`);
-  return correctAnswer;
-};
+  const question = (`Question: ${newProgressions.join(' ')}`);
 
-const playProgressionRound = () => {
-  const correctAnswer = getTaskAndSolution();
-  const userAnswer = Number(getUserAnswer());
-
-  return playRound(correctAnswer, userAnswer);
+  return [question, correctAnswer];
 };
 
 const playProgressionGame = () => {
   const condition = 'What number is missing in the progression?';
-
-  playGame(playProgressionRound, condition);
+  playGame(condition, playProgressionRound);
 };
 
 export default playProgressionGame;

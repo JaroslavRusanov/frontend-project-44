@@ -1,6 +1,5 @@
-import {
-  playRound, playGame, getRandomNumber, getUserAnswer,
-} from './index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../random-number.js';
 
 const isPrime = (number) => {
   if (number === 2 || number === 3) {
@@ -15,20 +14,18 @@ const isPrime = (number) => {
   return true;
 };
 
-const playPrimeRound = () => {
-  const numberFromTwo = getRandomNumber() + 2;
+const primeRound = () => {
+  const numberFromTwo = getRandomNumber(10, 2);
   const correctAnswer = (isPrime(numberFromTwo)) ? 'yes' : 'no';
 
-  console.log(`Question: ${numberFromTwo}`);
+  const question = `Question: ${numberFromTwo}`;
 
-  const userAnswer = getUserAnswer();
-
-  return playRound(correctAnswer, userAnswer);
+  return [question, correctAnswer];
 };
 
 const playPrimeGame = () => {
   const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  playGame(playPrimeRound, condition);
+  playGame(condition, primeRound);
 };
 
 export default playPrimeGame;
