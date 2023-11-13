@@ -5,7 +5,7 @@
 
 Brain Games.
 
-This is a training project by [Hexlet`s student](https://ru.hexlet.io/u/ja-ru) that includes 5 console games and introduction program.
+This is a training project by [Hexlet's student](https://ru.hexlet.io/u/ja-ru) that includes 5 console games and introduction program.
 For installiation these programes you need to clone this project and than enter the command `npm link`(You also need to have an already installed [node.js](https://nodejs.org/en)).
 1. Brain-games. This is a greeting. Print Your name and the program will say "Hello!" to You. To start You need to enter the command `brain-games`.
 2. Brain-even. Game shows the number three times and You guess if it's even. Start command is `brain-even`.
