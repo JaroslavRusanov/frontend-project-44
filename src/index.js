@@ -7,7 +7,6 @@ const playGame = (condition, roundResults = 0) => {
   let userName = readlineSync.question('May I have your name? ');
 
   if (userName.length === 0) {
-    console.log('Hello, Anonymous!');
     userName = 'Anonymous';
   }
 
@@ -33,6 +32,7 @@ const playGame = (condition, roundResults = 0) => {
 
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`Let's try again, ${userName}!`)
       return;
     }
     console.log('Correct!');
