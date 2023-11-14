@@ -12,10 +12,6 @@ const playGame = (condition, roundResults = 0) => {
 
   console.log(`Hello, ${userName}!`);
 
-  if (condition === 'stop') {
-    return;
-  }
-
   console.log(condition);
 
   for (let i = 0; i < countsRound; i += 1) {
