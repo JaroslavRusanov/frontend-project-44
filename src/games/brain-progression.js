@@ -4,7 +4,7 @@ import getRandomNumber from '../randomNumber.js';
 const countsOfNumber = 10;
 
 const getProgression = () => {
-  const progressions = [getRandomNumber(10)];
+  const progressions = [getRandomNumber(10, 1)];
   const progressionStep = getRandomNumber(10, 1);
 
   for (let i = 0; i < countsOfNumber; i += 1) {
@@ -17,7 +17,7 @@ const getProgression = () => {
 const playProgressionRound = () => {
   const progressions = getProgression();
   const randomAsk = getRandomNumber(10);
-  const correctAnswer = progressions[randomAsk - 1];
+  const correctAnswer = progressions[randomAsk];
   const newProgressions = [];
 
   for (let i = 0; i < countsOfNumber; i += 1) {
