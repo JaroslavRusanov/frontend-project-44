@@ -9,7 +9,7 @@ const playCalcRound = () => {
   const operators = ['+', '-', '*'];
   const operations = [num1 + num2, num1 - num2, num1 * num2];
 
-  const question = `${num1} ${operators[randomIndex]} ${num2}`;
+  const question = `Question: ${num1} ${operators[randomIndex]} ${num2}`;
   const correctAnswer = operations[randomIndex];
 
   return [question, correctAnswer];
