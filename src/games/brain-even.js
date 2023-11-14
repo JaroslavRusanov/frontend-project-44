@@ -1,9 +1,11 @@
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../randomNumber.js';
 import playGame from '../index.js';
+
+const isEven = (number) => !(number % 2);
 
 const playEvenRound = () => {
   const number = getRandomNumber(10, 1);
-  const correctAnswer = (number % 2 === 0) ? 'yes' : 'no';
+  const correctAnswer = (isEven(number)) ? 'yes' : 'no';
 
   const question = `Question: ${number}`;
 

@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../randomNumber.js';
 
 const getBiggestDivider = (number1, number2) => {
   const smallerNumberOf = Math.min(number1, number2);

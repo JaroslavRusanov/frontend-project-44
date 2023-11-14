@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../randomNumber.js';
 
 const countsOfNumber = 10;
 

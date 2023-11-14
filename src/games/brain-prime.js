@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRandomNumber from '../random-number.js';
+import getRandomNumber from '../randomNumber.js';
 
 const isPrime = (number) => {
   if (number === 2 || number === 3) {

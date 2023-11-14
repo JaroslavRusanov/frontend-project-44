@@ -10,11 +10,6 @@ const playGame = (condition, roundResults = 0) => {
     userName = 'Anonymous';
   }
 
-  userName = userName.trim();
-
-  if (userName[0] !== userName[0].toUpperCase()) {
-    userName = `${userName[0].toUpperCase()}${userName.slice(1)}`;
-  }
   console.log(`Hello, ${userName}!`);
 
   if (condition === 'stop') {
@@ -24,13 +19,12 @@ const playGame = (condition, roundResults = 0) => {
   console.log(condition);
 
   for (let i = 0; i < countsRound; i += 1) {
-    const resultRound = roundResults();
-    const question = resultRound[0];
-    const correctAnswer = resultRound[1].toString();
+    const [question, correctAnswer] = roundResults();
+
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer !== correctAnswer) {
+    if (userAnswer !== correctAnswer.toString()) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${userName}!`);
       return;
