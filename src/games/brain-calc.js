@@ -5,27 +5,12 @@ const playCalcRound = () => {
   const num1 = getRandomNumber(10);
   const num2 = getRandomNumber(10);
   const randomIndex = getRandomNumber(3);
+
   const operators = ['+', '-', '*'];
+  const operations = [num1 + num2, num1 - num2, num1 * num2];
 
-  let question = '';
-  let correctAnswer = 0;
-
-  switch (operators[randomIndex]) {
-    case '+':
-      question = `Question: ${num1} + ${num2}`;
-      correctAnswer = num1 + num2;
-      break;
-    case '-':
-      question = `Question: ${num1} - ${num2}`;
-      correctAnswer = num1 - num2;
-      break;
-    case '*':
-      question = `Question: ${num1} * ${num2}`;
-      correctAnswer = num1 * num2;
-      break;
-    default:
-      return null;
-  }
+  const question = `${num1} ${operators[randomIndex]} ${num2}`;
+  const correctAnswer = operations[randomIndex];
 
   return [question, correctAnswer];
 };
