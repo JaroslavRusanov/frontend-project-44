@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const playGame = (condition, roundResults = 0) => {
+const playGame = (condition, roundResults) => {
   const countsRound = 3;
 
   console.log('Welcome to the Brain Games!');

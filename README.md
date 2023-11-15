@@ -13,7 +13,8 @@ For installiation these programes you need to clone this project and than enter 
 4. Brain-gcd. You need to find the greatest common divisor of two numbers. Start command is `brain-gcd`.
 5. Brain-progression. Find and print the missing number in progression. Start command is `brain-progression`.
 6. Brain-prime. Is the printed number prime? Start command is `brain-prime`.
-All games have three rounds, if you answer is correct all times - You win, other way - let's try again.
+
+All games have three rounds, if your answer is correct all times - You win, other way - let's try again.
 
 You can see how to install and run the games at the following links:
 * [link asciinema brain-even](https://asciinema.org/a/5ecsk2hiGriAd2JNS7GfJYljP)
